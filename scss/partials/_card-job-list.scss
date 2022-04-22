@@ -1,0 +1,78 @@
+.job-list {
+	&__card {
+		display: flex;
+		margin-bottom: 30px;
+		justify-content: space-between;
+		align-items: center;
+		padding: 29px 37px;
+		border: 1px solid #ddd;
+		background-color: $white;
+		transition: 0.4s ease;
+
+		&:hover {
+			border: 1px solid $primary-color;
+			background-color: $primary-color;
+			text-decoration: none;
+		}
+
+		&:hover .job-list__card-button {
+			border: 1px solid $white;
+			opacity: 1;
+			-webkit-transform: translateX(20px);
+			transform: translateX(20px);
+		}
+		&:hover .job-list__card-title,
+		&:hover .job-list__card-level {
+			color: $white;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__card-title {
+		margin-bottom: 0;
+		font-size: 24px;
+		font-weight: 600;
+		color: $bluegrey-500;
+		text-transform: uppercase;
+		transition: 0.4s ease;
+	}
+	&__card-level {
+		font-size: 20px;
+		font-style: italic;
+		font-family: "Open Sans", sans-serif;
+		color: $bluegrey-300;
+		margin-bottom: 0;
+		transition: 0.4s ease;
+	}
+
+	&__card-button {
+		display: block;
+		// flex: 0 0 50px;
+		width: 50px;
+		height: 50px;
+		border: 1px solid #ddd;
+		border-radius: 50%;
+		line-height: 50px;
+		text-align: center;
+		color: #ddd;
+		font-size: 20px;
+		transition: all 0.4s ease;
+		transform: translateX(0px);
+		cursor: pointer;
+
+		&:hover {
+			background-color: $white;
+			color: $primary-color;
+		}
+
+		&:hover .work-with-us__card-icon {
+			color: $primary-color;
+		}
+	}
+
+	&__card-icon {
+		color: $white;
+	}
+}

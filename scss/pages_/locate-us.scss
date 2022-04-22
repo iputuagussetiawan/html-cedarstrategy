@@ -1,0 +1,57 @@
+@import "../_config.scss";
+@import "../plugin/_aos.scss";
+@import "../partials/_location.scss";
+@import "../partials/_getintouch.scss";
+
+div#map {
+	height: 612px;
+	width: 100%;
+}
+
+.locate-us {
+	&__map-container {
+		position: relative;
+	}
+	.btn-map {
+		position: absolute;
+		background-color: #1f9968;
+		bottom: 50px;
+		left: 50px;
+		-webkit-box-shadow: 3px 3px 21px -8px rgba(0, 0, 0, 0.75);
+		-moz-box-shadow: 3px 3px 21px -8px rgba(0, 0, 0, 0.75);
+		box-shadow: 3px 3px 21px -8px rgba(0, 0, 0, 0.75);
+		&:hover {
+			box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+		}
+	}
+	@media only screen and (max-width: 991.98px) {
+		div#map {
+			margin-top: 30px;
+			height: 350px;
+		}
+
+		.section-title {
+			font-size: 32px;
+			margin-bottom: 24px;
+		}
+		.location {
+			margin-top: 60px;
+		}
+		.location__item {
+			line-height: 1.5;
+			font-size: 16px;
+		}
+
+		&__map-container {
+			order: 3;
+		}
+	}
+	@media only screen and (max-width: 767.98px) {
+		div#map {
+			margin-top: 0px;
+		}
+		&__map-container {
+			margin-top: 32px;
+		}
+	}
+}

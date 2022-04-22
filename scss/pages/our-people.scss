@@ -1,0 +1,50 @@
+@import "../_config.scss";
+@import "../plugin/_aos.scss";
+@import "../partials/_getintouch.scss";
+.people {
+	@include imageRatio(318, 376);
+	&__card {
+		padding: 0px 20px;
+	}
+	&__card-info-container {
+		margin-top: 16px;
+	}
+	&__card-name {
+		font-size: 24px;
+		font-weight: 600;
+		color: $bluegrey-300;
+		text-align: center;
+	}
+	&__card-position {
+		font-size: 20px;
+		font-style: italic;
+		font-family: "Open Sans", sans-serif;
+		text-align: center;
+	}
+
+	@media only screen and (max-width: 767.98px) {
+		&__card {
+			display: flex;
+			align-items: center;
+			margin-bottom: 30px;
+			padding: 10px;
+			border: 1px solid #ddd;
+		}
+		&__image-container {
+			flex: 0 0 20%;
+		}
+		&__card-info-container {
+			margin-top: 0px;
+			margin-left: 24px;
+		}
+
+		&__card-name {
+			text-align: left;
+		}
+
+		&__card-position {
+			text-align: left;
+			margin-bottom: 0;
+		}
+	}
+}

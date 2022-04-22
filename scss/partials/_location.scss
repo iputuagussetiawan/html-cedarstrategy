@@ -1,0 +1,32 @@
+.location {
+	margin-top: 30px;
+	&__title {
+		font-size: 20px;
+		color: $bluegrey-500;
+		font-weight: 600;
+	}
+	&__item {
+		position: relative;
+		padding-left: 32px;
+		margin-bottom: 16px;
+		line-height: 2;
+		font-size: 16px;
+		font-family: "Open Sans", sans-serif;
+	}
+
+	&__icon {
+		position: absolute;
+		left: 0;
+		top: 10px;
+		color: $bluegrey-300;
+	}
+
+	&__link {
+		color: $bluegrey-400;
+		transition: 0.4s ease;
+		&:hover {
+			color: $primary-color;
+			text-decoration: none;
+		}
+	}
+}

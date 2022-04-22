@@ -1,0 +1,593 @@
+@import "../_config.scss";
+@import "../plugin/_aos.scss";
+@import "../plugin/_swiper-bundle.min.scss";
+@import "../plugin/_lightcase.min.scss";
+
+.no-gutters .addtional-padding {
+	padding-right: 64px;
+	&:nth-child(2n) {
+		padding-left: 64px;
+		padding-right: 0px;
+	}
+
+	@media only screen and (max-width: 767.98px) {
+		padding-right: 0px;
+		&:nth-child(2n) {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+	}
+}
+
+.parallax {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0.7;
+	// z-index: -1;
+}
+
+.about-us {
+	position: relative;
+	background-color: $white;
+	&__inner {
+		position: relative;
+		top: -100px;
+	}
+	&__info-container {
+		padding: 70px 44px;
+	}
+	&__description-container {
+		background-color: $white;
+		padding: 70px 50px;
+	}
+
+	&__info-wrapper {
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			background: url(../../images/left-quotes-sign.svg);
+			background-size: contain;
+			background-repeat: no-repeat;
+			top: -20px;
+			left: -20px;
+			width: 80px;
+			height: 80px;
+		}
+	}
+	&__title {
+		margin-bottom: 54px;
+		font-size: 36px;
+		font-weight: 600;
+		text-transform: uppercase;
+		color: $green-300;
+	}
+	&__info {
+		font-size: 24px;
+		font-family: "Open Sans", sans-serif;
+		font-style: italic;
+		color: $bluegrey-400;
+	}
+	&__description {
+		font-family: "Open Sans", sans-serif;
+		margin-bottom: 24px;
+		line-height: 1.5;
+	}
+}
+
+.about-video {
+	@include imageRatio(270, 186);
+	position: relative;
+	overflow: hidden;
+	background: $white;
+
+	// &__cover {
+	// 	background-image: linear-gradient(
+	// 			rgba(0, 0, 0, 0.5),
+	// 			rgba(0, 0, 0, 1.5)
+	// 		),
+	// 		url("../../images/about-us/video-thumbanil.jpg");
+	// 	background-size: cover;
+	// 	height: 100%;
+	// }
+
+	// .play-button {
+	// 	position: absolute;
+	// 	top: 50%;
+	// 	left: 50%;
+	// 	transform: translate(-50%, -50%);
+	// 	width: 30%;
+	// 	height: 30%;
+	// 	object-fit: contain;
+	// 	cursor: pointer;
+	// }
+
+	&__player {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		&:hover .about-video__ply-button {
+			opacity: 1;
+		}
+	}
+
+	#video {
+		width: 100%;
+		box-shadow: -2px 1px 30px -10px rgba(0, 0, 0, 0.57);
+	}
+
+	&__ply-button {
+		opacity: 0;
+		position: absolute;
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		background: transparent;
+		border: none;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		transition: 0.5s ease;
+		outline: none !important;
+		z-index: 2;
+	}
+	&__thumnail {
+		position: absolute;
+		z-index: 1;
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__ply-icon {
+		width: 100%;
+		outline: none;
+	}
+	&__time {
+		font-family: Arial, Helvetica, sans-serif;
+		position: absolute;
+		bottom: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+		color: rgba(255, 255, 255, 0.9);
+		text-shadow: 2px 2px 4px #000000;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 30%;
+		left: 10%;
+		bottom: 0;
+		right: 0;
+		background: url(../../images/people-story-shape.svg),
+			linear-gradient(90deg, #1f9968 0%, #20c582 70%);
+		background-position: left bottom;
+		background-repeat: no-repeat;
+		background-size: contain;
+		z-index: 3;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 20%;
+		right: 10%;
+		background: $grey-100;
+	}
+
+	&__container {
+		position: relative;
+		z-index: 4;
+	}
+	&__info-inner {
+		margin-top: 150px;
+	}
+
+	&__title {
+		text-transform: uppercase;
+		color: $white;
+		font-size: 42px;
+		margin-bottom: 24px;
+		font-weight: 600;
+	}
+
+	&__description {
+		font-size: 16px;
+		line-height: 1.5;
+		color: $white;
+		font-family: "Open Sans", sans-serif;
+	}
+
+	&__card {
+		display: block;
+		border: none;
+		border-radius: 0;
+		box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+
+		.card-title {
+			$font-size: 20px;
+			$line-height: 1.2;
+			$lines-to-show: 2;
+
+			display: block; /* Fallback for non-webkit */
+			display: -webkit-box;
+			margin-bottom: 32px;
+			text-transform: capitalize;
+			color: $bluegrey-400;
+			max-width: 600px;
+			height: $font-size * $line-height * $lines-to-show; /* Fallback for non-webkit */
+			font-size: $font-size;
+			font-weight: 600;
+			line-height: $line-height;
+			-webkit-line-clamp: $lines-to-show;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			transition: 0.4s ease;
+		}
+
+		&:hover {
+			text-decoration: none;
+		}
+
+		&:hover .people-story__image {
+			transform: scale(1.15);
+		}
+
+		&:hover .card-title {
+			color: $green-200;
+		}
+	}
+
+	&__image-container {
+		overflow: hidden;
+	}
+
+	&__image {
+		transition: 0.4s ease;
+	}
+
+	&__category {
+		text-transform: uppercase;
+		color: $bluegrey-300;
+		font-weight: 600;
+	}
+	@media only screen and (max-width: 991.98px) {
+		&__title {
+			text-align: center;
+		}
+		&__info-inner {
+			margin-top: 32px;
+		}
+
+		&__description {
+			text-align: center;
+		}
+
+		&__ply-button {
+			opacity: 1;
+		}
+	}
+
+	@media only screen and (max-width: 767.98px) {
+		&::before {
+			top: 6%;
+			left: 0;
+		}
+	}
+
+	@media only screen and (max-width: 575.98px) {
+		.swiper-button-prev {
+			left: 8px;
+		}
+		.swiper-button-next {
+			right: 8px;
+		}
+
+		&__title {
+			font-size: 32px;
+		}
+	}
+}
+.about-cl {
+	@include imageRatio(570, 428);
+	background: $white;
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 70%;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: $grey-100;
+	}
+	&__card {
+		display: block;
+		position: relative;
+		margin-bottom: 32px;
+		overflow: hidden;
+		cursor: pointer;
+
+		&:hover .about-cl__card-image {
+			transform: scale(1.15);
+		}
+	}
+
+	&__card-images {
+		background-color: $black;
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background: rgb(0, 0, 0);
+			background: linear-gradient(
+				0deg,
+				rgba(0, 0, 0, 1) 3%,
+				rgba(255, 255, 255, 0) 100%
+			);
+		}
+	}
+
+	&__card-info {
+		position: absolute;
+		left: 24px;
+		bottom: 16px;
+		right: 24px;
+		text-align: left;
+		transition: 0.5s 0.2s;
+	}
+
+	&__card-image {
+		opacity: 0.7;
+		transition: 0.5s;
+	}
+
+	&__card-title {
+		$font-size: 24px;
+		$line-height: 1.2;
+		$lines-to-show: 2;
+
+		display: block; /* Fallback for non-webkit */
+		display: -webkit-box;
+		color: white;
+		text-align: left;
+		font-weight: 600;
+		line-height: 1;
+		// height: $font-size * $line-height * $lines-to-show;
+		font-size: $font-size;
+		line-height: $line-height;
+		-webkit-line-clamp: $lines-to-show;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	&__description {
+		color: white;
+		font-size: 16px;
+		font-family: "Open Sans", sans-serif;
+	}
+}
+.more-articles {
+	@include imageRatio(270, 186);
+	position: relative;
+	overflow: hidden;
+	background: url(../../images/grey-overlay-ornament.svg),
+		linear-gradient(
+			90deg,
+			rgba(132, 150, 176, 1) 13%,
+			rgba(81, 98, 122, 1) 74%
+		);
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	.swiper-button-next,
+	.swiper-button-prev {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		top: 60%;
+		background-color: $white;
+		color: black;
+		font-size: 20px;
+		transition: all 0.6s ease;
+		cursor: pointer;
+		box-shadow: 0 9px 15px rgba(0, 0, 0, 0.1);
+	}
+
+	.swiper-button-prev {
+		outline: none;
+		left: -17px;
+		padding-right: 4px;
+		&:hover {
+			color: $primary-color;
+		}
+	}
+
+	.swiper-button-next {
+		outline: none;
+		right: -17px;
+		padding-left: 4px;
+		&:hover {
+			color: $primary-color;
+		}
+	}
+
+	.swiper-button-prev:after,
+	.swiper-button-next:after {
+		display: none;
+	}
+
+	&__container {
+		position: relative;
+		z-index: 4;
+	}
+
+	&__image-container {
+		overflow: hidden;
+	}
+	&__image {
+		border-radius: 0;
+		transition: 0.4s ease;
+	}
+
+	&__title {
+		text-transform: uppercase;
+		color: $white;
+		font-size: 42px;
+		margin-bottom: 24px;
+		font-weight: 600;
+	}
+	&__description {
+		$font-size: 16px;
+		$line-height: 1.5;
+		$lines-to-show: 4;
+
+		color: $bluegrey-400;
+		font-family: "Open Sans", sans-serif;
+		display: block; /* Fallback for non-webkit */
+		display: -webkit-box;
+		max-width: 600px;
+		height: $font-size * $line-height * $lines-to-show; /* Fallback for non-webkit */
+		font-size: $font-size;
+		line-height: $line-height;
+		-webkit-line-clamp: $lines-to-show;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		transition: 0.4s ease;
+	}
+
+	&__card {
+		display: block;
+		border: none;
+		border-radius: 0;
+		box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+
+		.card-title {
+			@include text-ellipses(
+				$font-size: 20px,
+				$line-height: 1.5,
+				$lines-to-show: 2
+			);
+			text-transform: capitalize;
+			color: $bluegrey-400;
+			font-weight: 600;
+		}
+
+		&:hover {
+			text-decoration: none;
+		}
+
+		&:hover .people-story__image {
+			transform: scale(1.15);
+		}
+
+		&:hover .card-title {
+			color: $green-200;
+		}
+		&:hover .more-articles__description {
+			text-decoration: none;
+		}
+		&:hover .more-articles__image {
+			transform: scale(1.2);
+		}
+	}
+
+	&__image-container {
+		overflow: hidden;
+	}
+
+	&__image {
+		transition: 0.4s ease;
+	}
+
+	&__category {
+		text-transform: uppercase;
+		color: $bluegrey-300;
+		font-weight: 600;
+	}
+	@media only screen and (max-width: 991.98px) {
+		&__title {
+			text-align: center;
+		}
+	}
+
+	@media only screen and (max-width: 575.98px) {
+		.swiper-button-prev {
+			left: 8px;
+		}
+		.swiper-button-next {
+			right: 8px;
+		}
+	}
+}
+.about-op {
+	@include imageRatio(1170, 428.3);
+	&__card {
+		position: relative;
+	}
+	&__card-image-container {
+		background: $black;
+	}
+	&__card-image {
+		opacity: 0.7;
+	}
+	&__card-info {
+		position: absolute;
+		width: 60%;
+		bottom: 44px;
+		left: 44px;
+	}
+	&__card-button {
+		font-size: 36px;
+		font-weight: 600;
+		color: $white;
+		transition: 0.4s ease;
+		&:hover {
+			text-decoration: none;
+			color: $white;
+		}
+		&:hover .about-op__card-icon {
+			margin-left: 10px;
+		}
+	}
+	&__card-description {
+		font-size: 16px;
+		color: $white;
+		font-family: "Open Sans", sans-serif;
+		line-height: 1.5;
+	}
+
+	&__card-icon {
+		font-size: 20px;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		border: 1px solid $white;
+		line-height: 30px;
+		text-align: center;
+		transition: 0.4s ease;
+	}
+
+	@media only screen and (max-width: 767.98px) {
+		&__card-info {
+			position: unset;
+			padding: 16px;
+			width: 100%;
+			bottom: 0px;
+			background: $primary-color;
+		}
+	}
+}

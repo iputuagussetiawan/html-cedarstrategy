@@ -1,0 +1,114 @@
+@import "../_config.scss";
+@import "../plugin/_aos.scss";
+@import "../plugin/_swiper-bundle.min.scss";
+@import "../plugin/_bootstrap-select.min.scss";
+@import "../plugin/_icheck-bootstrap.min.scss";
+@import "../partials/_articles-swiper.scss";
+
+.parallax {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0.7;
+	// z-index: -1;
+}
+
+.rfp-form {
+	position: relative;
+	background-color: $white;
+	&__title-container {
+		margin-bottom: 27px;
+	}
+	&__title {
+		font-size: 36px;
+		font-weight: 600;
+		color: $green-300;
+		text-transform: uppercase;
+	}
+	&__left-title,
+	&__right-title {
+		font-size: 20px;
+		text-transform: uppercase;
+		margin-bottom: 32px;
+	}
+	&__description {
+		font-size: 24px;
+		font-family: "Open Sans", sans-serif;
+	}
+}
+// CUSTOM STYLE
+.mc4wp-checkbox {
+	span {
+		color: #515f6b;
+		padding-left: 30px;
+		position: relative;
+	}
+	input {
+	    position: absolute !important;
+	    opacity: 0;
+	    margin: 0;
+	}
+	label {
+		cursor: pointer;
+		&:hover:before{
+	    	border: 2px solid #4cae4c;
+		}
+	}
+	label:before {
+		content: "";
+	    display: inline-block;
+	    position: absolute;
+	    width: 22px;
+	    height: 22px;
+	    border: 1px solid #D3CFC8;
+	    border-radius: 0;
+	}
+	input:checked ~ label:before {
+	  background-color: #2196F3;
+	}
+
+	/* Create the checkmark/indicator (hidden when not checked) */
+	span:after,
+	span:before {
+	  content: "";
+	  position: absolute;
+	  display: none;
+	}
+
+	/* Show the checkmark when checked */
+	input:checked ~ span:after,
+	input:checked ~ span:before {
+	  display: block;
+	}
+
+	/* Style the checkmark/indicator */
+	span:after {
+	  	top: 0;
+	    left: 0;
+	    width: 7px;
+	    height: 10px;
+	    border: 2px solid #fff;
+	    border-left: none;
+	    border-top: none;
+	    transform: translate(7.75px, 4.5px) rotate(45deg);
+	    -ms-transform: translate(7.75px, 4.5px) rotate(45deg);
+	}
+
+	span:before {
+	  background-color: #5cb85c;
+      border-color: #4cae4c;
+      height: 100%;
+      width: 23px;
+	}
+}
+
+select {
+    background: url('../../images/down-arrow.svg') no-repeat #ddd;
+    -webkit-appearance: none;
+    background-size: 10px;
+    background-position: center;
+    background-position-x: 94%;
+}
